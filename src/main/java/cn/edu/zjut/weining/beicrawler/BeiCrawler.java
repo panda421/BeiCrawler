@@ -1,7 +1,7 @@
 package cn.edu.zjut.weining.beicrawler;
 
 import cn.edu.zjut.weining.beicrawler.executor.BeiCrawlerExecutor;
-import cn.edu.zjut.weining.beicrawler.crawler.BeiCrawlerWorker;
+import cn.edu.zjut.weining.beicrawler.worker.BeiCrawlerWorker;
 
 /**
  * @ClassName: BeiCrawler

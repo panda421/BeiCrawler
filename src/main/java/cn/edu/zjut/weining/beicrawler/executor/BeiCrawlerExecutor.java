@@ -1,6 +1,7 @@
 package cn.edu.zjut.weining.beicrawler.executor;
 
-import cn.edu.zjut.weining.beicrawler.crawler.BeiCrawlerWorker;
+import cn.edu.zjut.weining.beicrawler.worker.BeiCrawlerWorker;
+import cn.edu.zjut.weining.beicrawler.log.BeiCrawlerLogger;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -16,6 +17,7 @@ import java.util.concurrent.TimeUnit;
  * @Date: 2020-03-28 10:11
  */
 public class BeiCrawlerExecutor {
+    private String TAG = "BeiCrawlerExecutor";
     private BeiCrawlerWorker beiCrawlerWorker;
     private int maxFailCount = 5;
     private Map<String, String> header = null;
@@ -53,7 +55,7 @@ public class BeiCrawlerExecutor {
             } catch (Throwable e) {
                 c++;
                 if (c == maxFailCount) {
-                    e.printStackTrace();
+                    BeiCrawlerLogger.log(TAG, e.toString());
                 }
             }
         }

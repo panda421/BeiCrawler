@@ -1,4 +1,4 @@
-package cn.edu.zjut.weining.beicrawler.crawler;
+package cn.edu.zjut.weining.beicrawler.worker;
 
 
 /**
@@ -10,14 +10,14 @@ package cn.edu.zjut.weining.beicrawler.crawler;
 public interface BeiCrawlerWorker<T> {
     /**
      * 如何解析爬下来的HTML文档？
-     * @param html JSOUP提供的文档
+     * @param html OKhttp提供的文档
      * @return
      */
     T run(String html);
 
     /**
      * run方法异常则执行fail方法
-     * @param link 网址
+     * @param link 错误的网址
      * @return
      */
     T fail(String link);
